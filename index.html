@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock-Paper-Scissors</title>
+    <style>
+        #resultado {
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rock Paper Scissors</h1>
+    <input id="usuario" type="text" placeholder="Inserte piedra papel tijeras">
+    <div id="resultado">Resultado</div>
+    <script>
+        let inputUsuario = document.getElementById("usuario");
+        const valorUsuario = inputUsuario.value.toLowerCase();
+        let aleatorio = null;
+        let resultado = document.getElementById("resultado");
+
+    
+       function validarUsuario() {
+        if (usuario !== "piedra" && usuario !== "papel" && usuario !== "tijeras") {
+    // Aquí puedes mostrar un mensaje de error o salir de la función
+    return ("weepa");
+}
+}
+
+      document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("usuario").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        usuario = event.target.value.toLowerCase();
+      maquina();
+    }
+  });
+});
+
+//listo 
+
+        function maquina (opcion1, opcion2, opcion3) {
+        const opciones = ["piedra", "papel", "tijeras"];
+        const algoritmo = Math.floor(Math.random()*opciones.length)
+        return opciones [algoritmo]
+        }
+
+        aleatorio = maquina()
+
+        if (
+  (usuario === "piedra" && aleatorio === "tijeras") ||
+  (usuario === "papel" && aleatorio === "piedra") ||
+  (usuario === "tijeras" && aleatorio === "papel")
+) {
+  document.getElementById("resultado").innerHTML = "🎉 Enhorabuena, has ganado";
+} else if (usuario === aleatorio) {
+  document.getElementById("resultado").innerHTML = "🤝 Empate";
+} else {
+  document.getElementById("resultado").innerHTML = "💻 Ha ganado la máquina, prueba de nuevo";
+}
+
+
+    </script>
+    
+</body>
+</html>

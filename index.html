@@ -15,25 +15,28 @@
     <input id="usuario" type="text" placeholder="Inserte piedra papel tijeras">
     <div id="resultado">Resultado</div>
     <script>
+        //variables
         let inputUsuario = document.getElementById("usuario");
         const valorUsuario = inputUsuario.value.toLowerCase();
         let aleatorio = null;
         let resultado = document.getElementById("resultado");
+        //variables
 
     
-       function validarUsuario() {
-        if (usuario !== "piedra" && usuario !== "papel" && usuario !== "tijeras") {
-    // Aquí puedes mostrar un mensaje de error o salir de la función
-    return ("weepa");
-}
-}
+
 
       document.addEventListener("DOMContentLoaded", function() {
   document.getElementById("usuario").addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
-        usuario = event.target.value.toLowerCase();
-      maquina();
+        valorUsuario = event.target.value.toLowerCase();
+      return aleatorio();
     }
+          /* function validarUsuario() {
+        if (usuario !== "piedra" && usuario !== "papel" && usuario !== "tijeras") {
+    // Aquí puedes mostrar un mensaje de error o salir de la función
+    return ("weepa");
+}
+}*/
   });
 });
 

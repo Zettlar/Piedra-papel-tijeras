@@ -15,11 +15,13 @@
     <input id="usuario" type="text" placeholder="Inserte piedra papel tijeras">
     <div id="resultado">Resultado</div>
     <script>
+      document.addEventListener("DOMContentLoaded", function () {
         //variables
         let inputUsuario = document.getElementById("usuario");
         let valorUsuario = inputUsuario.value.toLowerCase();
         let aleatorio = null;
         let resultado = document.getElementById("resultado");
+        const opciones = ["piedra", "papel", "tijeras"];
         //variables
 
     /* Fallo 1 variable aleatorio es null al momento que se le llama en disparador
@@ -36,11 +38,20 @@
                       (aqui habra que hacer algo para que pare) o invoque a func4
                       func4 ejecuta la logica y finaliza el programa
 */
+function padre () {
+  function hijo1 (){
+    if (!opciones.includes(valorUsuario)) {
+    document.getElementById("resultado").innerHTML = "Te has equivocado. Inserta un valor válido.";
+  } else if (opciones.includes(valorUsuario)){
+    document.getElementById("resultado").innerHTML = "Perfecto, seguimos.";
+  }
+} return hijo1 ();
+}
 
       document.addEventListener("DOMContentLoaded", function() { //Espera a que cargue
   document.getElementById("usuario").addEventListener("keydown", function(event) { //pulsa enter ejecuta
     if (event.key === "Enter") {
-      return aleatorio();
+      return padre();
     }
           /* function validarUsuario() {
         if (usuario !== "piedra" && usuario !== "papel" && usuario !== "tijeras") {
@@ -52,11 +63,16 @@
 });
 
 //listo 
+// 
+
+
+
+
 
         function maquina (opcion1, opcion2, opcion3) {
-        const opciones = ["piedra", "papel", "tijeras"];
+        
         const algoritmo = Math.floor(Math.random()*opciones.length)
-        return opciones [algoritmo]
+        return opciones [algoritmo] 
         }
 //comitt
         aleatorio = maquina()
@@ -72,8 +88,7 @@
 } else {
   document.getElementById("resultado").innerHTML = "💻 Ha ganado la máquina, prueba de nuevo";
 }
-
-
+})
     </script>
     
 </body>

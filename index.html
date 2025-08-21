@@ -17,18 +17,23 @@
     <script>
         //variables
         let inputUsuario = document.getElementById("usuario");
-        const valorUsuario = inputUsuario.value.toLowerCase();
+        let valorUsuario = inputUsuario.value.toLowerCase();
         let aleatorio = null;
         let resultado = document.getElementById("resultado");
         //variables
 
-    
+    /* Fallo 1 variable aleatorio es null al momento que se le llama en disparador
+       Fallo 2 El disparador al pulsar enter deberia de invocar la logica.
+       Fallo 3 dentro de la logica hay que meter la validacion
+       
+                  3.0 La validacion se ejecuta primero, en caso de OK
+                      Comprueba empate "prueba otra vez" : retorna funcion de
+                      ganador o perdedor. 
+*/
 
-
-      document.addEventListener("DOMContentLoaded", function() {
-  document.getElementById("usuario").addEventListener("keydown", function(event) {
+      document.addEventListener("DOMContentLoaded", function() { //Espera a que cargue
+  document.getElementById("usuario").addEventListener("keydown", function(event) { //pulsa enter ejecuta
     if (event.key === "Enter") {
-        valorUsuario = event.target.value.toLowerCase();
       return aleatorio();
     }
           /* function validarUsuario() {
